@@ -14,10 +14,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   
-code {
-font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
   
   
   @font-face {
@@ -29,6 +26,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     font-family: 'RobotoThin';
     src: url('./fonts/Roboto-Thin.ttf');
   }
+
 button {
     font-size: 1.2rem;
     margin-right: 10px;
@@ -41,12 +39,11 @@ input{
     width: 100%;
 }
 
-@font-face {
-    font-family: 'RobotoRegular';
-    src: url('./fonts/Roboto-Regular.ttf');
+h1{
+  text-align: center;
 }
 
-@font-face {
-    font-family: 'RobotoThin';
-    src: url('./fonts/Roboto-Thin.ttf');
+h3{
+  text-align: justify;
+  text-justify: inter-word;
 }

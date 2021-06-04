@@ -1,0 +1,63 @@
+h1{
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+h3{
+    display: inline-block;
+    margin: auto;}
+
+.filters{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+.filters-top{
+    
+    width: 40%;
+    border: solid white 1px;
+    padding: 5px;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filters-bottom{
+    border: solid white 1px; 
+    margin-bottom: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text] {
+    width: 20%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  
+ form{
+     display:inline-block;
+     width: 100%;
+ }
+ .createfilter{
+     display: inline-block;
+     align-items: center;
+     text-align: center;
+     margin: auto;
+ }
+
+ .mod-filter{
+     width: 30px;
+ }

@@ -1,16 +1,24 @@
 import React from 'react';
 import { Navbar } from '../../common';
+import logo from '../../../imgs/logo.png';
+import { Link } from 'react-router-dom';
+
 
 import './Header.css';
 
-function Header () {
+function Header (props) {
+
+    const logOut = ()=>{
+        props.getIn(false);
+    }
+
 
     return(
         <section className="header">
             <section className="header-top">
                 <section className="header-top__logo">
                     <a href="/">
-                         <img src="https://freepikpsd.com/media/2019/10/Profit-PNG-Photos.png" className="header-logo" />
+                         <img src={ logo } className="header-logo" />
                     </a>
                 </section>
                 <section className="header-top__navbar">
@@ -22,11 +30,8 @@ function Header () {
             </section>
 
             <section className="header-bottom">
-                <section className="header-bottom__profile">
-                    User
-                </section >
                 <section className="header-bottom__statistics">
-                    Log Out
+                    { props.connected ? <button onClick={logOut}>LogOut</button> : <Link to="/logIn" className="navbar-item">Log In</Link>}
                 </section>
 
             </section>

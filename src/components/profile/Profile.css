@@ -1,0 +1,34 @@
+h1,h2,h3{
+    text-align: center;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: 80%;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+.profile-top__winrate , .profile-top__proffits{
+    box-sizing: content-box;
+    width: 25%;
+    border: solid white 1px;
+    padding: 5px;
+    margin: 80px;
+    display: inline-block;
+    align-items: center;
+}
+
+.profile-bottom{
+    box-sizing: content-box;
+    width: 80%;
+    border: solid white 1px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.open-trade{
+    max-width: 25%;
+}

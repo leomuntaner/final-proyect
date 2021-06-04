@@ -1,0 +1,40 @@
+
+.stats{
+    width: 80%;
+    align-items:center;
+    margin: auto;
+}
+
+.stats-top{
+    margin-bottom: 80px;
+    align-items: center;
+}
+
+.stats-top__stat{
+   
+    width: 20%;
+    border: solid white 1px;
+    padding: 5px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    margin:auto
+}
+
+.stats-bottom{
+    border: solid white 1px; 
+    margin-bottom: 50px;
+}
+
+.stats-box{
+    height: 50%;
+    display: inline-block ;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.stats-box__element{
+    width: 100%;
+    vertical-align: top;
+}

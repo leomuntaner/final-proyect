@@ -1,0 +1,74 @@
+DROP SCHEMA proyect;
+CREATE SCHEMA proyect;
+use proyect;
+
+CREATE TABLE Assets(
+	id int primary key,
+	assetName varchar(15),
+	tag varchar (5) unique NOT NULL
+);
+
+CREATE TABLE Users(
+	id int primary key,
+	pass varchar(15) NOT NULL,
+	email varchar (25) unique NOT NULL
+);
+CREATE TABLE Filters(
+	id int primary key auto_increment,
+    userId int ,
+	filterName varchar(20),
+	isActivated boolean,
+    candleConfirmation int,
+    resistence boolean,
+    onlyLong boolean,
+    onlyShort boolean,
+    rsi boolean,
+    macd boolean,
+    ichimokuCloud boolean,
+    movingAverage boolean,
+    exponentialMA boolean,
+    retest boolean,
+    constraint fk_userId foreign key(userId) references Users(id)
+);
+
+CREATE TABLE Trades(
+	id int primary key auto_increment,
+    userId int ,
+    usdAmount int,
+	dateStart DATE NOT NULL,
+	dateEnd DATE,
+	priceStart int NOT NULL,
+	priceEnd int,
+	leverage int,
+    assetId int,
+    isOpen boolean,
+    isLong boolean,
+    filterId int,
+    proffits int,
+    foreign key (assetId) references Assets(id),
+    foreign key (userId) references Users(id),
+    foreign key (filterId) references Filters(id)
+);
+insert into Assets values(1 , 'Bitcoin', 'BTC'),
+						(2 , 'Ethereum', 'ETH'),
+						(3 , 'Cardano', 'ADA');
+insert into Users values (1, 'asdasd','leonardo'),
+						(2, 'asd','asd'),
+						(3, 'asd', 'Carlos');
+insert into Filters values (0,1,'Safe Long Strat' , true, 2, true, false , false, false,true ,false, false, false, false ) ,
+						(0,1,'Clasic Bull market resistence/suport' , true, 2, true, false , false, false,true ,false, false, false, false ) ,
+                        (0,1,'Risky MACD + RSI' , true, 2, true, false , false, false,true ,false, false, false, false ) ,
+                        (0,1,'Ichimoku low leverage low risk ' , true, 2, true, false , false, false,true ,false, false, false, false ) ,
+						(0,2,'Scalping indicators' , true, 2, false, true , false, false,true ,false, false, true, false ); 
+insert into Trades  values (0, 1,300, 1622617056 , 1622617056 , 515 , 60 , 3 , 1 , false, true, 1, 50),
+							(0, 1, 600,1622617056 , 1622617056 , 55 ,90 , 3 , 1 , false, true, 2, -20),
+                            (0, 1, 350,1622617056 , 1622617056 , 175 , 60 , 7, 1 , true, true, 1, 350),
+                            (0, 1, 700,1622617056 , 1622617056 , 75 , 460 , 3 , 1 , false, false, 2, -200),
+                            (0, 1,170, 1622617056 , 1622617056 , 55 , 69 , 5 , 2, true, true, 2, 350),
+                            (0, 1,500, 1622617056 , 1622617056 , 24 , 50 , 3 , 2, false, true, 1, 250),
+                            (0, 1,100, 1622617056 , 1622617056 , 35 , 600 , 3 , 2, false, true, 1, 180),
+                            (0, 1,300, 1622617056 , 1622617056 , 120 , 150, 3 , 2, true, true, 4, 220),
+                            (0, 1,600, 1622617056 , 1622617056 , 51 , 60 , 3 , 2, true, true, 1, 10),
+                            (0, 1,150, 1622617056 , 1622617056 , 566 , 600 , 20 , 2, true, true, 1, -40),
+                            (0, 1,420, 1622617056 , 1622617056 , 57 , 88 , 3 , 2, true, true, 3, 100),
+                            (0, 1,50, 1622617056 , 1622617056 , 155 , 160 , 15 , 1 , false, false, 3, 150);
