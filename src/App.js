@@ -23,12 +23,11 @@ function App () {
             <Header connected={connected} getIn={getIn} />
             <div className="content">
                 <Switch>
-                <Route path="/" component={  Home } exact={ true }  />
-                {connected ?  <Route path="/profile" component={ Profile } /> : <LogIn getIn={getIn}/> }
-                {connected ?  <Route path="/stats"  component={ Stats }/> : <LogIn getIn={getIn}/> }
-                {connected ?  <Route path="/filters" component={ Filters }/> : <LogIn getIn={getIn}/> }
+                    <Route path="/" component={  Home } exact={ true }  />
+                    {connected ?  <Route path="/profile" component={ Profile } /> : <LogIn getIn={getIn}/> }
+                    {connected ?  <Route path="/stats"  component={ Stats }/> : <LogIn getIn={getIn}/> }
+                    {connected ?  <Route path="/filters" component={ Filters }/> : <LogIn getIn={getIn}/> }
                     <Route path="/logIn" component={ LogIn }/>
-                
                 </Switch>
             </div>
             <Footer />
