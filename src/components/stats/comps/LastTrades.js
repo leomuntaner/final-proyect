@@ -1,19 +1,24 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function LastTrades() {
 
+    const long = 'LONG';
+    const short = 'SHORT';
+    const eth = 'ETH';
+    const btc = 'BTC';
+
     const [item, setItem] = useState([]);
-    useEffect(() =>{
+    useEffect(() => {
         fetch("http://localhost/php-proyecto/getTrades.php")
-        .then( res => res.json())
-        .then(
-            (result)=>{
-                setItem(result);
-            }
-        )
-    },[] );
-    
-    return ( 
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setItem(result);
+                }
+            )
+    }, []);
+
+    return (
         <table className="table">
             <thead className="">
                 <tr>
@@ -30,10 +35,10 @@ export default function LastTrades() {
                         <td>{item.priceStart}</td>
                         <td>{item.priceEnd}</td>
                         <td>{item.leverage}</td>
-                        <td>{item.isLong}</td>
-                        <td>{item.assetId}</td>
+                        <td>{item.isLong == 1 ? long : short }</td>
+                        <td>{item.assetId == 1 ? btc : eth }</td>
                     </tr>
-                    ))
+                ))
                 }
             </tbody>
         </table>);

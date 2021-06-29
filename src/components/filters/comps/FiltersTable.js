@@ -23,7 +23,6 @@ export default function FiltersTable() {
                 </tr>
             </thead>
             <tbody>
-                {console.log(item)}
                 {item.map(item => (
                     <tr key={item.id}>
                         <td>{item.filterName}</td>

@@ -1,14 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react';
 import TradesTable from './comps/TradesTable';
 import WinRate from './comps/WinRate';
 import Proffits from './comps/Proffits';
-import Modal from './comps/Modal'
 import './Profile.css';
-    
+import Modal from './comps/Modal'
+
+
 function Profile (props) {
 
     const [isOpen, setIsOpen] = useState(false);
-  
+    const Toggle = () => {setIsOpen(!isOpen)};
+
+
     return(
         <section className="profile" >
             <div className="profile-top">
@@ -21,12 +24,10 @@ function Profile (props) {
             </div>
 
             <div>
-                <button onClick={() => setIsOpen(true)} 
+                <button onClick={Toggle} 
                         className='open-trade'>Open Trade
                 </button>
-                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                    AGREGAR TRADE
-                </Modal>
+                <Modal  show={isOpen} close={Toggle}/>
             </div>
             <div className="profile-bottom">
                     <h2>Active trades</h2>
@@ -37,4 +38,3 @@ function Profile (props) {
 }
 
 export default Profile;
-

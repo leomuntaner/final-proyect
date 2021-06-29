@@ -19,12 +19,12 @@ h3{
 
 .filters-top{
     
-    width: 40%;
+    width: 80%;
     border: solid white 1px;
     padding: 5px;
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -33,26 +33,44 @@ h3{
     border: solid white 1px; 
     margin-bottom: 50px;
     width: 100%;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
 input[type=text] {
-    width: 20%;
+    width: 40%;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    margin: auto;
+  }
+  input[type=number] {
+    width: 80%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: auto;
+
+  }
+  
+  input[type=number] {
+    width: 80%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: auto;
+
   }
 
-  
- form{
-     display:inline-block;
-     width: 100%;
- }
  .createfilter{
-     display: inline-block;
+     display: block;
      align-items: center;
      text-align: center;
      margin: auto;
@@ -60,4 +78,14 @@ input[type=text] {
 
  .mod-filter{
      width: 30px;
+ }
+
+ .newFilterL , .newFilterR {
+     display: inline-block;
+     width: 50%;
+ }
+
+ .enter{  
+     margin-left: 320px;
+     width: 30%;
  }

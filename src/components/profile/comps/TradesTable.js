@@ -12,6 +12,11 @@ export default function TradesTable() {
             }
         )
     },[] );
+
+    const long = 'LONG';
+    const short = 'SHORT';
+    const eth = 'ETH';
+    const btc = 'BTC';
     
     return ( 
         <table className="table">
@@ -30,8 +35,8 @@ export default function TradesTable() {
                         <td>{item.priceStart}</td>
                         <td>{item.priceEnd}</td>
                         <td>{item.leverage}</td>
-                        <td>{item.isLong}</td>
-                        <td>{item.assetId}</td>
+                        <td>{item.isLong == 1 ? long : short }</td>
+                        <td>{item.assetId == 1 ? btc : eth }</td>
                     </tr>
                     ))
                 }

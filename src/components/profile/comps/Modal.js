@@ -1,22 +1,19 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React, { PureComponent } from 'react';
+import './modal.css'
 
-export default function Modal({open, children, onClose}){
-    if(!open) return (<h1>Is open = false</h1>);
-
-    return ReactDom.createPortal(
-        <>
-            <div className='modal'>
-                {children}<br/>
-                <button className='open-trade'
-                        onClick={onClose}> Close</button>
+const Modal = ({ show, close }) => {
+    return (
+        <> {show ?
+            <div className="modal-container" onClick={()=> close()}>
+                <main className="modal_content">This is modal content</main>
+                <footer className="modal_footer">
+                    <button className='open-trade modal-close' onClick={()=> close()}> Close</button>
+                    <button className='open-trade submit'> Submit</button>
+                </footer>
             </div>
-        </>
-       , document.getElementById("portal")
-    );  
+            : null}
+        </>);
+
 }
 
-/*
-
-
-*/
+export default Modal;
